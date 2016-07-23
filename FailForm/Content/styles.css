@@ -1,0 +1,24 @@
+﻿.field-validation-error 
+{
+    color: Red;
+}
+#welcome
+{
+    text-align:center;
+    font-family: "Bradley Hand ITC", cursive;
+    font-weight: bold;
+}
+#formcontainer
+{
+    width:50%;
+    margin: 0 auto;
+}
+#wait
+{
+     text-align:center;
+     display:none;
+}
+#but
+{
+    text-align:center;
+}

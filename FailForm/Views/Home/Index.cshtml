@@ -1,0 +1,29 @@
+﻿@model FailForm.Models.InfoStorage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Post Form</title>
+    <script src="~/Scripts/jquery-3.1.0.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/validators.js"></script>
+    <script src="~/Scripts/functions.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="formcontainer">
+        @Html.Partial(ViewBag.Data.partial as string, Model)
+    </div>
+    <div id="wait"><img src="~/Content/Images/ajax-loader.gif" /></div>
+    <button id="getJson">Get stored data</button>
+    <p>Gets StoredInfo data from database and prints it to console(for testing purposes)</p>
+</body>
+</html>

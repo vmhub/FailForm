@@ -1,0 +1,38 @@
+﻿@model FailForm.Models.InfoStorageUpdate
+<h3>Previous data saved, you can now edit stored information.</h3>
+@using (Ajax.BeginForm("Edit", "Home", null, new AjaxOptions()
+                        {
+                            UpdateTargetId = "formcontainer",
+                            InsertionMode = InsertionMode.Replace,
+                            HttpMethod = "POST",
+                            LoadingElementId = "wait"
+                        }, new { id = "form" }))
+{
+    <p>Please enter your name and pick the Sectors you are currently involved in. </p>
+    <fieldset class="form-group">
+        <label for="nm">Name</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", id = "nm" })
+        @Html.ValidationMessageFor(x => x.Name)
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="em">Email</label>
+        @Html.TextBoxFor(x => x.Email, new { @readonly = "true", @class = "form-control", id = "em" })
+        @Html.ValidationMessageFor(x => x.Email)
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="sl">Sector:</label>
+        @Html.ListBoxFor(x => x.secVals, ViewBag.Data.list as MultiSelectList, new { Size = 5, @class = "form-control", id = "sl" })
+        @Html.ValidationMessageFor(x => x.secVals)
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="ag">Agree to terms</label>
+        <div class="checkbox">
+            @Html.CheckBoxFor(x => x.Terms)
+        </div>
+        @Html.ValidationMessageFor(x => x.Terms)
+    </fieldset>
+    <div id="but">
+        <input type="submit" class="btn btn-warning" value="Edit" />
+    </div>
+    <script src="~/Scripts/resetvalidator.js"></script>
+}
