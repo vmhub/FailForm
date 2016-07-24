@@ -103,6 +103,7 @@ namespace FailForm.Controllers
         /// </summary>
         /// <param name="gd"></param>
         /// <returns></returns>
+        [HttpPost]
         public ActionResult Edit(InfoStorageUpdate gd)
         {
             ViewBag.Data = new Bag { list = new MultiSelectList(sectorList, "Value", "htmlName", gd.secVals), partial = "EditForm" };
