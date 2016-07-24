@@ -50,7 +50,7 @@ namespace FailForm.Models
                 yield return new SectorDBTree<Sector>
                 {
                     item = itemz,
-                    childz = formTree(col, itemz.Id)
+                    childz = col.formTree(itemz.Id)
                 };
             }
         }
@@ -65,7 +65,7 @@ namespace FailForm.Models
             {
                 item.item.htmlName = htmlPadder(o) + item.item.Name;
                 holder.Add(item.item);
-                formList(item.childz, o + 1);
+                item.childz.formList(o + 1);
             }
         }
         /// <summary>
