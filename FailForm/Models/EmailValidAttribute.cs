@@ -9,7 +9,7 @@ namespace FailForm.Models
 {
     public class EmailValidAttribute : ValidationAttribute, IClientValidatable
     {   /// <summary>
-        /// Server side email validation (not working as expected on client side)
+        /// Server side email validation
         /// </summary>
         public override bool IsValid(object value)
         {
