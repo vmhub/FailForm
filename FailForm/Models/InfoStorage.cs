@@ -29,7 +29,7 @@ namespace FailForm.Models
         StringLength(100, MinimumLength = 5, ErrorMessage = "Length error"),
         RegularExpression(@"^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)$", ErrorMessage = "Email contains invalid characters"),
         EmailValid(ErrorMessage = "Email taken"),
-        Remote("MailInvalid", "Home", HttpMethod = "POST", ErrorMessage = "Email address already registered.")] //using remote since EmailValid on client side provided wrong result(for some reason?)
+        Remote("MailInvalid", "Home", HttpMethod = "POST", ErrorMessage = "Email address already registered.")] //using remote instead of EmailValid on client side
         public string Email { get; set; }
     }
 }
